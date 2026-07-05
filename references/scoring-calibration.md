@@ -246,3 +246,20 @@ The idea's level must match the brief's objective. Level mismatch is a common er
 - Campaign Idea when a Big Idea is needed — will work for six months and die. No foundation for growth.
 
 Before evaluating, determine: what idea level does the brief call for, and what idea level is being proposed. If there's a mismatch — it lowers the strategic fit score, even if the idea itself is strong.
+
+---
+
+## 8. Gap Analysis (Score × HumanKind)
+
+Run after both scores exist. Diagnose the gap, then act:
+
+| Situation | Diagnosis | Action |
+|-----------|-----------|--------|
+| Score 8+ / HumanKind < 7 | Clever but doesn't matter | Strengthen human purpose, find tension |
+| Score < 7 / HumanKind 8+ | Matters but boring | Strengthen craft, originality, surprise |
+| Score 8+ / HumanKind 8+ | Strong candidate | Check scalability, polish |
+| Score < 7 / HumanKind < 7 | Restart | Different HMW, different methods |
+
+**Hard rule: below HumanKind 7 = do not present.**
+
+**Cross-check**: if HumanKind and Grey Scale diverge by more than 1.5 points, revisit the evaluation.

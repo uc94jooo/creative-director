@@ -6,6 +6,18 @@
 
 ## 📖 變更歷史
 
+### 🟢 v1.9 (2026-07-05)
+* **修改時間**：2026-07-05 (Local Time)
+* **設計原則**：SKILL.md 求的不是「檔案最短」而是「常駐成本最小、行為閘門不外移」。判準：某段拿掉後，模型會不會在讀到 reference 之前就犯錯——會則留、不會則外移。
+* **說明**：
+  * **兩段式架構**：依「策略段（Phase 0-2，產出對齊表即結案）／創意段（Phase 3-6，生成與檢驗）」拆分。SKILL.md 瘦身為常駐骨架（652 → 約 260 行），Phase 全文外移至兩個段落包：
+    * `references/segment-strategy.md`（Phase 0/1/2 全文）
+    * `references/segment-creative.md`（Phase 3/4/5/6 全文）
+  * **段落邊界規則**：策略段結案物＝三件套（對齊表 vX＋insight-pass 串＋dialogue-log）；結案後停住，嚴禁自動滑入 Phase 3。創意段進場檢查：偵測既有 `*_策略對齊表*.md` → 載入直接開工不重跑策略段（支援跨 session 斷點續作、一表多輪發想）。
+  * **常駐硬閘門清單**：六條閘門（掃描代選閘、診斷閘、Checkpoint 閘、結案閘、HumanKind<7 輸出閘、段落包必讀閘）獨立成節留在常駐區，防 v1.6「閘門隨細節外移而失效」的翻車重演。
+  * **尾段去重瘦身**：Creative Constitution 短版、HumanKind 量表、Calibration 雙系統、Output Format 四節自 SKILL.md 移除（`scoring-calibration.md` 與 `output-templates.md` 已有完整版）；Gap Analysis 四行表原 references 缺漏，補入 `scoring-calibration.md` §8。
+  * 十步驟骨架、Hidden Notes 整章、Anti-Pitfall Rules 維持常駐不動。
+
 ### 🟢 v1.8 (2026-07-05)
 * **修改時間**：2026-07-05 (Local Time)
 * **背景**：本地工作機（marketing-rag）與 GitHub 兩線分岔——本地 7/3 加入 Hidden Notes 系統但未推送，remote 7/5 完成 v1.7 Phase 0 重構。本版以 remote v1.7 為底合併兩線，並補入 Mia C'bon 2026 案實跑（Phase 0→Checkpoint 1 三輪深挖）驗證出的新規則。
