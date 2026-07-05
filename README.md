@@ -18,7 +18,7 @@
 - **隱性背景策略推演引擎**：內部框架推演、對外全部轉譯為商務白話的雙層輸出防線
 - **十步驟標準週期骨架**與六條常駐硬閘門，所有條文以低解讀力模型為適配基準撰寫
 
-完整修改史見 [changelog.md](changelog.md)。
+完整修改史見 [changelog.md](creative-director/changelog.md)。
 
 ## Phase Router（本 fork 版）
 
