@@ -7,9 +7,10 @@
 ## 📖 變更歷史
 
 ### 🟢 v1.7 (2026-07-05)
-* **修改時間**：2026-07-05 12:05 (Local Time)
+* **修改時間**：2026-07-05 12:45 (Local Time)
 * **說明**：
-  * **Phase 0 Ingestion 流程防呆與結構重構**：更新 `SKILL.md` 與 `references/phase0-build-standard.md`，將 Phase 0 改良為動態相對路徑掃描（不寫死絕對路徑），加入「狀況 A（不存在專案資料區時自動建立並終止 Turn 等待）」與「狀況 B（存在時列出子資料夾並終止 Turn 詢問）」之防通靈與防代選設計，並將資料夾名稱改為通用命名（如 `專案A-2026-03/`）。同時，將 Phase 0 自動化建檔與 `.cd-notes/` 靜默建立程序設定為「背景靜默執行」，排除對話中斷，使 Phase 0 純化為檔案對齊與防呆建檔。
+  * **Phase 0 Ingestion 流程防呆與結構重構**：更新 `SKILL.md` 與 `references/phase0-build-standard.md`，將 Phase 0 改良為動態相對路徑掃描，加入防通靈與防代選設計。
+  * **檔案庫清理與規劃**：刪除 `references/security-lock-draft.md`，建立 `wishlist.md` 來記錄未來的檔案命名規範優化與安全機制，並重命名變更記錄與思考文件。
 
 ### 🟢 v1.6 (剛剛)
 * **修改時間**：2026-07-03 00:18 (Local Time)
