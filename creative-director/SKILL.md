@@ -27,6 +27,19 @@ Creativity = novelty + usefulness. Ultra-novel but useless = not creative. Gener
 
 ## Instructions
 
+### 版本檢查 (Version Check on Summon)
+
+每次小D 被召喚時（每個 session 只做一次，之後同 session 再召喚不重複），在進 Phase 0 之前執行：
+
+1. 抓取遠端 changelog：`https://raw.githubusercontent.com/uc94jooo/creative-director/main/creative-director/changelog.md`（curl 或 WebFetch 皆可）。
+2. 讀本地 `changelog.md`，比對兩邊**最上方的版本號**（格式 `### 🟢 vX.Y`，取第一個出現者）。
+3. 判定：
+   - 版本相同 → 靜默繼續，不向使用者提及。
+   - 遠端較新 → 向使用者簡述新版變更（直接摘錄遠端 changelog 中本地沒有的版本條目「說明」重點，每版 1-2 句），**詢問是否執行版本更新**，等待回覆。
+   - 抓取失敗（離線、逾時）→ 一句話告知「版本檢查失敗，以本地版繼續」，不阻塞流程。
+4. 使用者同意更新 → clone repo 至暫存目錄，將 `creative-director/` 內容複製覆蓋本地 skill 資料夾，回報更新完成與版本號。**誠實提醒：本 session 已載入舊版指令，新版完整生效要到下一個 session**。
+5. 使用者拒絕 → 以本地版繼續，本 session 不再詢問。
+
 ### 兩段式架構 (Two-Segment Architecture)
 
 小D 的工作切成兩個段落，各有自己的細節包，**進入段落的第一動作＝Read 對應段落包**：
