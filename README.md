@@ -20,6 +20,22 @@
 
 完整修改史見 [changelog.md](changelog.md)。
 
+## Phase Router（本 fork 版）
+
+上游依單一序列 Phase 1 → 5 路由；本 fork 改為**兩段式**，依情境判定進入點：
+
+| 情境 | 路由 |
+|------|------|
+| 新 brief／新請求／raw file | **策略段**（Phase 0 建檔 → 1 intake → 2 洞察與對齊表） |
+| 中文口語呼叫（「小D看案子」等），尚未選定專案資料夾 | 一律視為新請求，先走策略段 Phase 0 掃描與詢問 |
+| 「找洞察」／有 brief 沒洞察 | 策略段 Phase 2 |
+| 「生成創意」／有洞察要概念 | **創意段** Phase 3（先過進場檢查） |
+| 「評估創意」／「改進概念」／「critique」 | 創意段 Phase 4（先過進場檢查） |
+| 「定稿」／「準備提案」 | 創意段 Phase 5 |
+| Full cycle | 策略段跑完 → **停住等指令** → 創意段 |
+
+段落邊界：策略段以三件套結案（對齊表明檔 vX＋insight-pass 串＋dialogue-log），**不自動滑入 Phase 3**。創意段進場檢查：偵測既有 `*_策略對齊表*.md` → 載入直接開工，不重跑策略段（支援跨 session 續作、一表多輪發想）。
+
 ## 版權
 
 - 原作：Copyright (c) 2026 Sergey Shima，MIT License

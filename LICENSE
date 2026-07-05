@@ -3,19 +3,6 @@ MIT License
 Copyright (c) 2026 Sergey Shima
 (original work: https://github.com/smixs/creative-director-skill)
 
-Copyright (c) 2026 Johs (uc94jooo) — modifications
-(this fork: https://github.com/uc94jooo/creative-director)
-
-Modifications include, but are not limited to: Traditional Chinese (zh-TW)
-adaptation and localization for the Taiwan marketing workflow; the "小D"
-persona and Chinese-language phase routing; Phase 0 interactive ingestion
-(專案資料區 project-folder workflow); the 13-point Strategy Alignment Table
-workflow with Checkpoint gating and versioned archiving; the Hidden Notes
-system (.cd-notes/, insight-pass, dialogue-log, Breadcrumb Bank); the
-two-segment architecture (strategy segment / creative segment); and the
-private background strategy engine references. See changelog.md for the
-full modification history.
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -33,3 +20,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+Copyright (c) 2026 Johs (uc94jooo) — modifications
+(this fork: https://github.com/uc94jooo/creative-director)
+
+Modifications include, but are not limited to: Traditional Chinese (zh-TW)
+adaptation and localization for the Taiwan marketing workflow; the "小D"
+persona and Chinese-language phase routing; Phase 0 interactive ingestion
+(專案資料區 project-folder workflow); the 13-point Strategy Alignment Table
+workflow with Checkpoint gating and versioned archiving; the Hidden Notes
+system (.cd-notes/, insight-pass, dialogue-log, Breadcrumb Bank); the
+two-segment architecture (strategy segment / creative segment); and the
+private background strategy engine references. See changelog.md for the
+full modification history.
