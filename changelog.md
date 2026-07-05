@@ -6,6 +6,19 @@
 
 ## 📖 變更歷史
 
+### 🟢 v1.8 (2026-07-05)
+* **修改時間**：2026-07-05 (Local Time)
+* **背景**：本地工作機（marketing-rag）與 GitHub 兩線分岔——本地 7/3 加入 Hidden Notes 系統但未推送，remote 7/5 完成 v1.7 Phase 0 重構。本版以 remote v1.7 為底合併兩線，並補入 Mia C'bon 2026 案實跑（Phase 0→Checkpoint 1 三輪深挖）驗證出的新規則。
+* **說明**：
+  * **移植回 Hidden Notes 整章**（v1.7 遺失的本地功能）：`.cd-notes/` 隱藏資料夾、線頭題庫 (Breadcrumb Bank)、新手／老手訊號判定。
+  * **新增「標準週期流程（十步驟骨架）」**：新案從進場到 Checkpoint 1 通過的固定節奏總覽表，明確每步產出物與兩種隱藏檔的寫入時機。
+  * **insight-pass 寫入規則條文化**（Hidden Notes A）：三觸發條件（引擎跑完／Phase 4 recursion／使用者修正致對齊表改寫）、機械化編號規則、同輪追加 vs 跨輪新檔之區分。
+  * **新增 dialogue-log 機制**（Hidden Notes A-2）：週期結算式對話紀錄檔，固定四欄結構＋沉澱區。
+  * **新增寫入判準對照表**（Hidden Notes A-3）：insight-pass 跟「表的變化」走、dialogue-log 跟「週期」走。
+  * **Checkpoint 1 擴充**：使用者深挖/修正時的處理循環（收斂規則＋禁止事項）、對齊表落地存檔步驟（固定檔名格式＋frontmatter 版本欄＋不覆寫舊版）。
+  * **細項移植**：Phase Router 中文口語呼叫規則、對齊表排版規則（強制分點條列）、Phase 0 `_Project/` 防混淆警告。
+  * 所有新條文以低解讀力模型為適配基準撰寫（機械判斷條件、編號步驟、模板、禁止清單）。
+
 ### 🟢 v1.7 (2026-07-05)
 * **修改時間**：2026-07-05 12:45 (Local Time)
 * **說明**：
