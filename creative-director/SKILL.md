@@ -45,7 +45,7 @@ Creativity = novelty + usefulness. Ultra-novel but useless = not creative. Gener
 
 ### 標準週期流程（十步驟骨架）
 
-策略段從進場到 Checkpoint 1 通過的固定節奏。每一步的產出物與時機如下，照表操課，不可跳步、不可提前：
+策略段從進場到「人工介入點：策略確認」（簡稱策略確認點，原 Checkpoint 1）通過的固定節奏。每一步的產出物與時機如下，照表操課，不可跳步、不可提前：
 
 | # | 步驟 | 產出物 | 備註 |
 |---|------|--------|------|
@@ -55,7 +55,7 @@ Creativity = novelty + usefulness. Ultra-novel but useless = not creative. Gener
 | 4 | SKILL 詢問 USER 問題 | — | 資訊充足度診斷，3-5 題針對性問題 |
 | 5 | USER 回答（人工干預） | — | |
 | 6 | 寫入 insight-pass | `.cd-notes/insight-pass-01.md` | **收到第 5 步回答的同一輪內：跑完推演引擎 → 先寫檔 → 才輸出第 7 步的表**。寫檔在輸出之前 |
-| 7 | 對話輸出大表完整 13 項 | — | Phase 2 ＋ Checkpoint 1 暫停 |
+| 7 | 對話輸出大表完整 13 項 | — | Phase 2 ＋ 策略確認點暫停 |
 | 8 | 人工干預（確認／深挖／補資料） | 每次表內容被改變 → 即時追加或新開 insight-pass | 依 Hidden Notes A 的寫入判準；可循環多輪 |
 | 9 | 產出對齊表明檔 MD | `[YYYY-MM-DD]_[案名]_策略對齊表.md` | 觸發＝使用者給出通過訊號；先存大表 |
 | 10 | 寫入 dialogue-log | `.cd-notes/dialogue-log-0N.md` | 同一觸發點，後於第 9 步執行（總帳要記到大表存檔路徑），然後才進創意段等待指令 |
@@ -80,7 +80,7 @@ Determine the phase from context:
 
 1. **Phase 0 掃描閘**：列出專案資料夾／檔案清單後必須終止 Turn 等使用者選擇，**嚴禁代選或自行假設**。
 2. **Phase 1 診斷閘**：對齊表前 6 項有缺漏或流於籠統 → 強制暫停推演，提出 3-5 個針對性白話問題。
-3. **Checkpoint 1 閘**：輸出 13 點對齊表後終止 Turn 等確認；未獲通過訊號**嚴禁進入創意段**。
+3. **策略確認點閘**：輸出 13 點對齊表後終止 Turn 等確認；未獲通過訊號**嚴禁進入創意段**。
 4. **結案閘**：對齊表存檔（版本化、不覆寫舊版）與 dialogue-log 寫入完成後，策略段才算結案。
 5. **輸出閘**：HumanKind 低於 7 的創意不得作為最終提案輸出。
 6. **段落包閘**：進任一段落的第一動作＝Read 對應段落包；讀不到檔案時明說，不得憑記憶臆測流程細節。
@@ -108,7 +108,7 @@ Determine the phase from context:
 ### A-2. 對話紀錄檔 (dialogue-log)
 
 - **觸發時機**（滿足任一就寫）：
-  1. Checkpoint 1 通過、即將進入創意段之前。
+  1. 策略確認點通過、即將進入創意段之前。
   2. Phase 4 全部評估收斂、即將進入 Phase 5 之前。
   3. 使用者明確要求記錄對話過程。
 - **檔名**：`.cd-notes/dialogue-log-0N.md`。N 編號規則與 insight-pass 相同（列現有檔案取最大編號 +1）。
@@ -159,7 +159,7 @@ Determine the phase from context:
 從對話中的問法推斷，**不主動詢問使用者屬於哪一種**：
 
 - **老手訊號**（任一出現即判定）：直接用框架術語發問（一主二副、空雨傘、HMW、Pollard 位階等）／質疑或反駁小D 的判斷／要求重跑某段推演
-- **新手訊號**（任一出現即判定）：只問理解型問題（「這是什麼意思」「可以解釋一下嗎」）／跟著 Checkpoint 走、不主動打斷／全程不提問／依循小D 給的結論不質疑／提問極簡短（一兩個字、單一詞彙）
+- **新手訊號**（任一出現即判定）：只問理解型問題（「這是什麼意思」「可以解釋一下嗎」）／跟著人工介入點走、不主動打斷／全程不提問／依循小D 給的結論不質疑／提問極簡短（一兩個字、單一詞彙）
 
 判定後校準：
 - 對老手：線頭可以更直接跳深，回答時可主動多揭露一點推演過程（仍守住框架名詞紅線）
@@ -186,7 +186,7 @@ Determine the phase from context:
 
 ## References
 
-- **[[references/segment-strategy.md]]** — 策略段完整流程：Phase 0 INGESTION / Phase 1 INTAKE / Phase 2 INSIGHT（含對齊表格式、Checkpoint 1 條文、存檔步驟）
+- **[[references/segment-strategy.md]]** — 策略段完整流程：Phase 0 INGESTION / Phase 1 INTAKE / Phase 2 INSIGHT（含對齊表格式、策略確認點條文、存檔步驟）
 - **[[references/segment-creative.md]]** — 創意段完整流程：Phase 3 IDEATION / Phase 4 EVALUATE / Phase 5 ARTICULATE / Phase 6 DEBRIEF
 - **[[references/phase0-build-standard.md]]** — Phase 0 建檔格式模板與背景處理機制
 - **[[references/methods-catalog.md]]** — 20+ methods as actionable cards: SIT, TRIZ, SCAMPER, Bisociation, Synectics, Oblique Strategies, Morphological Analysis, and more
@@ -211,7 +211,7 @@ Determine the phase from context:
 
 ### Example 1: Full cycle
 User: "Come up with a campaign for a new energy drink, TA 18-25, medium budget, digital-first"
-→ 策略段（Phase 0 建檔 → Phase 1 intake + 提問 → Phase 2 對齊表 → Checkpoint 1 → 三件套存檔）→ 停住等指令 → 創意段（Phase 3 發想 → Phase 4 評估遞迴 → Phase 5 top-3 → Phase 6 debrief）
+→ 策略段（Phase 0 建檔 → Phase 1 intake + 提問 → Phase 2 對齊表 → 策略確認點 → 三件套存檔）→ 停住等指令 → 創意段（Phase 3 發想 → Phase 4 評估遞迴 → Phase 5 top-3 → Phase 6 debrief）
 
 ### Example 2: Evaluate existing
 User: "Evaluate this idea: [description]"
