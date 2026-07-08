@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Director 執行流程圖 (v1.4.0)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #0d0f12;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-glow: radial-gradient(circle, rgba(236,72,153,0.15) 0%, rgba(0,0,0,0) 70%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            background-image: var(--accent-glow);
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 2rem 2rem 2rem;
+            max-width: 800px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #ec4899, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .version-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(168, 85, 247, 0.1));
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: var(--accent-purple);
+            padding: 0.3rem 0.8rem;
+            border-radius: 99px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 2rem 5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: border-color 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(168, 85, 247, 0.2);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-left: 4px solid var(--accent-pink);
+            padding-left: 0.75rem;
+        }
+
+        .diagram-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: auto;
+            padding: 1rem 0;
+            background: rgba(0,0,0,0.15);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.02);
+        }
+
+        .diagram-note {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .mermaid {
+            width: 100%;
+            text-align: center;
+        }
+
+        .steps-list {
+            margin-top: 1rem;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .step-num {
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+            box-shadow: 0 4px 10px rgba(168, 85, 247, 0.3);
+        }
+
+        .step-content h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+        }
+
+        .step-content p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .highlight-text {
+            color: var(--accent-pink);
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 3rem 0;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 0.85rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Creative Director (小D) 工作流可視化</h1>
+        <p>AI 創意總監專案推演與 Checkpoint 雙段式架構</p>
+        <span class="version-badge">v1.4.0 (放行閘門與雙段式重構)</span>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>流程結構圖</h2>
+            <div class="diagram-container">
+                <div class="mermaid">
+                    graph TD
+                        %% Nodes
+                        Start([提供專案背景資料或提案 / 提交 Brief / 呼叫小D]) --> Phase0[Phase 0: INGESTION<br>掃描工作區、建立整合規劃 MD 與 .cd-notes/]
+                        
+                        Phase0 --> Phase1[Phase 1: INTAKE<br>解讀前 6 項、Pollard 創意層級與體驗診斷]
+                        Phase1 --> SuffCheck{資訊充足度診斷}
+                        
+                        SuffCheck -- 資訊不足或籠統 --> AskQuestions[提出 3-5 個針對性問題<br>並強制暫停等候]
+                        AskQuestions --> CP1_1{🚨 資訊確認暫停}
+                        CP1_1 -- 使用者回答問題 --> Phase0
+                        
+                        SuffCheck -- 資訊充足 --> Phase2[Phase 2: INSIGHT<br>跑推演引擎、寫入 insight-pass、產出 13 點對齊表]
+                        
+                        Phase2 --> CP1{🚨 Checkpoint 1<br>策略確認點：暫停審查}
+                        
+                        CP1 -- 使用者修改意見 --> RefineStrategy[修改對齊表、寫入新 insight-pass]
+                        RefineStrategy --> Phase2
+                        
+                        CP1 -- 使用者拍板確認 --> SaveStrategy[十步驟存檔<br>存檔對齊表、寫入 dialogue-log]
+                        
+                        SaveStrategy --> CP2{🚨 Checkpoint 2<br>傳球/放行閘：暫停審查}
+                        
+                        CP2 -- 選擇傳球給 AMY --> AmyEntry([交接對齊表給 AMY])
+                        
+                        CP2 -- 進入小D創意段 (創意發想) --> Phase3[Phase 3: IDEATION<br>使用 SIT/TRIZ 等發想 5-12+ 概念]
+                        
+                        Phase3 --> Phase4[Phase 4: EVALUATE<br>三軸評估：Axis 1/2/3 評分、遞迴優化]
+                        Phase4 --> Phase5[Phase 5: ARTICULATE<br>撰寫 Top-3/One-Pager 提案與 HumanKind 審查]
+                        Phase5 --> Phase6[Phase 6: DEBRIEF<br>完成專案總結與對話總帳]
+                        
+                        Phase6 --> End([交付最終創意提案與 DEBRIEF])
+
+                        %% Styles
+                        style Start fill:#1e1b4b,stroke:#a855f7,stroke-width:2px,color:#f3f4f6
+                        style End fill:#1e1b4b,stroke:#a855f7,stroke-width:2px,color:#f3f4f6
+                        style AmyEntry fill:#1e1b4b,stroke:#ec4899,stroke-width:2px,color:#f3f4f6
+                        style CP1_1 fill:#831843,stroke:#ec4899,stroke-width:3px,color:#f3f4f6
+                        style CP1 fill:#831843,stroke:#ec4899,stroke-width:3px,color:#f3f4f6
+                        style CP2 fill:#831843,stroke:#ec4899,stroke-width:3px,color:#f3f4f6
+                        style Phase0 fill:#1f2937,stroke:#4b5563,color:#9ca3af
+                        style Phase1 fill:#1f2937,stroke:#4b5563,color:#9ca3af
+                        style Phase2 fill:#1f2937,stroke:#4b5563,color:#9ca3af
+                        style RefineStrategy fill:#1f2937,stroke:#4b5563,color:#9ca3af
+                        style SaveStrategy fill:#1e293b,stroke:#0ea5e9,color:#f3f4f6
+                        style Phase3 fill:#1f2937,stroke:#4b5563,color:#9ca3af
+                        style Phase4 fill:#1f2937,stroke:#4b5563,color:#9ca3af
+                        style Phase5 fill:#1f2937,stroke:#4b5563,color:#9ca3af
+                        style Phase6 fill:#1f2937,stroke:#4b5563,color:#9ca3af
+                </div>
+                <div class="diagram-note">*(註：交給 AMY 之後的社群分流 A/B/C 三分支目前尚未實作，涉及跨技能協作)*</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>工作流階段與 Checkpoint 說明</h2>
+            <ul class="steps-list">
+                <li class="step-item">
+                    <div class="step-num">0</div>
+                    <div class="step-content">
+                        <h3>Phase 0 - 原始資料建檔 (Ingestion)</h3>
+                        <p>小D 掃描專案資料目錄，引導使用者指定分析的專案。自動建立整合規劃與 <code>.cd-notes/</code> 隱藏工作區。</p>
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>Phase 1 - 限制解讀與診斷 (Intake)</h3>
+                        <p>分析 Brief 後解讀<strong class="highlight-text">對齊表</strong>前 6 項（含創意層級位階與體驗防雷診斷）。若資料不全或太籠統，將拋出 3-5 題<strong>強制暫停</strong>，等候回答。</p>
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>Phase 2 - 深度策略對齊與存檔 (Insight)</h3>
+                        <p>後台靜默調用 brand-voice 品牌原型、角色鑑定、空雨傘三大推演引擎並寫入 <code>insight-pass</code> 留痕，對話中則輸出 13 點策略<strong class="highlight-text">對齊表</strong>。</p>
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-num">!</div>
+                    <div class="step-content">
+                        <h3><span class="highlight-text">Checkpoint 1 — 策略確認點 (策略段閘門)</span></h3>
+                        <p>輸出整合<strong class="highlight-text">對齊表</strong>後強制暫停。使用者若提出修正，小D 更新大表並記錄，直到使用者拍板確認。確認後存檔 <code>*_策略對齊表.md</code> 並寫入 <code>dialogue-log</code>。</p>
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-num">!</div>
+                    <div class="step-content">
+                        <h3><span class="highlight-text">Checkpoint 2 — 放行與傳球門檻 (跨技能邊界)</span></h3>
+                        <p>策略段結案後，在傳遞任務給 AMY (社群分流) 或進入創意段發想前，<strong>強制暫停 Turn</strong>，取得人類明確授權後方可放行。*(註：交給 AMY 之後的社群分流 A/B/C 三分支目前尚未實作，涉及跨技能協作)*</p>
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>Phase 3 - 核心創意發想 (Ideation)</h3>
+                        <p>
+                            <strong>• 對標經典案例 (MOC Scan)</strong>：載入案例庫索引，瀏覽 5-7 個坎城經典 Campaign，避免撞點舊套路並尋找盲區。<br>
+                            <strong>• 三方法矩陣發想 (Matrix)</strong>：從小D 創意方法矩陣中選出「結構型 (SIT/TRIZ)」、「聯想型 (雙向聯想)」與「干擾型 (逆向腦力激盪)」三種核心工具發想 8-12 個概念。<br>
+                            <strong>• 常規暖身過濾</strong>：排除前 3 個直覺、常規的想法，著重在第 5-12 個以上的概念。<br>
+                            <strong>• 張力測試與 SMP 結晶</strong>：每個創意概念需經人性/品類/文化張力測試，並簡化成一句話 SMP 主張及 2-3 行具體說明。
+                        </p>
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h3>Phase 4 - 三軸評估與優化 (Evaluate & Refine)</h3>
+                        <p>
+                            <strong>• 創意位階對齊</strong>：檢查創意是否契合 Pollard 創意層級（企業/品牌/活動/非廣告體驗/執行手段），杜絕「以手段假裝成 Campaign」的錯置。<br>
+                            <strong>• 三軸評估系統 (Three-axis evaluation)</strong>：<br>
+                            &nbsp;&nbsp;➔ <em>Axis 1 (合規篩選)</em>：8 題 Pass/Fail（包括目標、洞察、TA、產品支撐等），任一 Fail 即淘汰。<br>
+                            &nbsp;&nbsp;➔ <em>Axis 2 (加權評審)</em>：原創性（對標案例飽和度，重疊者分數上限鎖死）、戰略契合度、情感共鳴（情緒三階層校準，僅打中第 3 層複雜情緒可得 9+ 分）、可行性、延展性、簡單度。結合 HumanKind 與 Grey Scale Cannes 規格評級（低於 7 分禁輸出）。<br>
+                            &nbsp;&nbsp;➔ <em>Axis 3 (系統延展性)</em>：生命週期長度、抽象階梯抽換力、多管道部署力、系統一體化程度 4 題簡答。<br>
+                            <strong>• 四視角評審與遞迴收斂</strong>：模擬創意總監、策略師、消費者與坎城評委四視角進行 Gap Analysis，並重複遞迴優化，直至綜合分數達到 9 分以上（且寫入評估日誌留痕）。
+                        </p>
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-num">5</div>
+                    <div class="step-content">
+                        <h3>Phase 5 - 提案格式化包裝 (Articulate)</h3>
+                        <p>將入選概念依 Top-3 Presentation 模板包裝，並確保 HumanKind 評級高於 7 分才可輸出給使用者。</p>
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-num">6</div>
+                    <div class="step-content">
+                        <h3>Phase 6 - 專案結案與結帳 (Debrief)</h3>
+                        <p>產出 DEBRIEF 結案報告並完成 <code>dialogue-log</code> 的全記錄寫入，正式結案。</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Antigravity Suite & Creative Director Skill. All rights reserved.</p>
+    </footer>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>
