@@ -6,6 +6,12 @@
 
 ## 📖 變更歷史
 
+### 🟢 v2.0.2 (2026-07-08)
+* **修改時間**：2026-07-08 (Local Time)
+* **說明**：
+  * **Phase 0 解耦與重構**：將 Ingestion (Phase 0 工作區路徑與防呆掃描、替身解析、檔案多選) 相關流程從 `references/segment-strategy.md` 中徹底解耦，移入專屬的 `references/segment-ingestion.md` (原 `phase0-build-standard.md` 重新命名)，使 `segment-strategy.md` 專注於 Phase 1 & 2 的策略推演。
+  * **Alias 動態對照支援**：在 `segment-ingestion.md` 中實作動態 alias 解析規則，使小D 讀取工作區的 `AGENTS.md` 外部路徑對照，移除技能檔中寫死的個人絕對路徑，提升跨平台通用性。
+
 ### 🟢 v2.0.1 (2026-07-08)
 * **修改時間**：2026-07-08 (Local Time)
 * **說明**：

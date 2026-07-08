@@ -137,8 +137,8 @@ def validate_card(card_path: Path, schema: dict[str, set[str]]) -> list[str]:
     # --- year ---
     if "year" in fm and fm["year"] is not None:
         y = fm["year"]
-        if not isinstance(y, int) or not (1950 <= y <= 2025):
-            errors.append(f"Invalid `year`: {y!r} (must be int 1950–2025)")
+        if not isinstance(y, int) or not (1950 <= y <= 2026):
+            errors.append(f"Invalid `year`: {y!r} (must be int 1950–2026)")
 
     # --- quality_score ---
     if "quality_score" in fm and fm["quality_score"] is not None:

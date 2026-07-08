@@ -11,7 +11,7 @@ Frontmatter contract for `legendary-campaigns/cards/{id}.md`. All enums below ar
 | `id` | string | single | kebab-case `{brand}-{title}-{year}`, lowercase |
 | `title` | string | single | campaign name as published |
 | `brand` | string | single | brand name |
-| `year` | int | single | 1950–2025 (most are 2010+; vintage classics included for calibration) |
+| `year` | int | single | 1950–2026 (most are 2010+; vintage classics included for calibration) |
 | `country` | enum | single | see `country` below |
 | `region` | enum | single | see `region` below |
 | `industry` | enum | single | see `industry` below |

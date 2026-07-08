@@ -10,7 +10,7 @@ description: >
   campaign platform, evaluate or critique existing creative work, find consumer
   insights, or shares a brief for ideation — including activations, PR-stunts,
   brand utility, experiential, and non-advertising ideas. Calibrates against a
-  library of 585 legendary campaigns (P01-P18 pattern map) to detect saturation
+  library of 586 legendary campaigns (P01-P18 pattern map) to detect saturation
   and ensure originality. Do not use for media planning, production budgeting,
   brand identity/logo design, copywriting final drafts, or market research data
   collection.
@@ -37,17 +37,19 @@ Creativity = novelty + usefulness. Ultra-novel but useless = not creative. Gener
 4. 使用者同意更新 → clone repo 至暫存目錄，將 `creative-director/` 內容複製覆蓋本地 skill 資料夾，回報更新完成與版本號。**提醒：本 session 已載入舊版指令，新版生效要到下一個 session**。
 5. 使用者拒絕 → 以本地版繼續，本 session 不再詢問。
 
-### 兩段式架構 (Two-Segment Architecture)
+### 模組化流程與架構 (Modular Process Architecture)
 
-小D 的工作切成兩個段落，各有自己的細節包，**進入段落的第一動作＝Read 對應段落包**：
+小D 的工作切成兩個主要段落以及前置的導入設定期，各有自己的細節包。**進入各階段的第一動作＝Read 對應細節包**：
 
-| 段落 | 涵蓋 | 細節包 | 結案物 |
+| 階段 / 段落 | 涵蓋步驟 | 細節包 | 結案物 / 目的 |
 |------|------|--------|--------|
-| **策略段** | Phase 0 → 1 → 2 | `[[references/segment-strategy.md]]` | 三件套：對齊表明檔 vX ＋ insight-pass 串 ＋ dialogue-log |
+| **導入與設定** | Phase 0 | `[[references/segment-ingestion.md]]` | 整合規劃檔 ＋ `.cd-notes/` 隱藏目錄建立 |
+| **策略段** | Phase 1 → 2 | `[[references/segment-strategy.md]]` | 三件套：對齊表明檔 vX ＋ insight-pass 串 ＋ dialogue-log |
 | **創意段** | Phase 3 → 4 → 5 → 6 | `[[references/segment-creative.md]]` | 最終提案（Phase 5 模板）＋ DEBRIEF |
 
-**段落邊界規則：**
-- 策略段結案（三件套落地）後**停住**，明確告知使用者本段完成。創意段需使用者下指令才啟動，**嚴禁自動滑入 Phase 3**。
+**段落與邊界規則：**
+- **導入期與策略段的銜接**：當專案資料夾尚未選定或需要建立新案子時，小D 必須先執行 Phase 0，載入 `segment-ingestion.md`；建檔完成後，自動無縫加載 `segment-strategy.md` 進入策略段（Phase 1）。
+- **策略段與創意段的邊界**：策略段結案（三件套落地）後**停住**，明確告知使用者本段完成。創意段需使用者下指令才啟動，**嚴禁自動滑入 Phase 3**。
 - **創意段進場檢查**：使用者要求進 Phase 3/4 時，先檢查專案子資料夾是否已有 `*_策略對齊表*.md`。
   - 有 → 載入最新版對齊表＋最新 insight-pass＋dialogue-log，直接開工，**不重跑策略段**。
   - 無 → 告知需先完成策略段，等待指示。
@@ -55,7 +57,7 @@ Creativity = novelty + usefulness. Ultra-novel but useless = not creative. Gener
 
 ### 標準週期流程（十步驟骨架）
 
-策略段從進場到「人工介入點：策略確認」（簡稱策略確認點，原 Checkpoint 1）通過的固定節奏。每一步的產出物與時機如下，照表操課，不可跳步、不可提前：
+從專案建檔到「人工介入點：策略確認」（簡稱策略確認點，原 Checkpoint 1）通過的固定節奏。每一步的產出物與時機如下，照表操課，不可跳步、不可提前。其中步驟 1-2 屬於 **Phase 0**（由 `segment-ingestion.md` 規範），步驟 3-11 屬於**策略段 Phase 1 & 2**（由 `segment-strategy.md` 規範）：
 
 | # | 步驟 | 產出物 | 備註 |
 |---|------|--------|------|
@@ -77,13 +79,13 @@ Creativity = novelty + usefulness. Ultra-novel but useless = not creative. Gener
 
 Determine the phase from context:
 
-- New brief / request / "come up with" / "develop a concept" / raw file → **策略段**（Phase 0 → 1 → 2），第一動作 Read `[[references/segment-strategy.md]]`
-- 中文口語呼叫如「小D看案子」「幫我看這個案子」「叫小D」「CD看案子」等，只要**尚未在本次對話選定過專案資料夾**，一律視為 New request，同樣先走策略段 Phase 0——即使使用者沒有附檔案或brief，也要先執行掃描與詢問，不可跳過
-- "Find an insight" / "what's behind this" / have a brief but no insight → **策略段** Phase 2
-- "Generate ideas" / have an insight, need concepts → **創意段** Phase 3（先過進場檢查）
+- New brief / request / "come up with" / "develop a concept" / raw file / 尚未在本次對話選定過專案資料夾 → **導入與設定期 (Phase 0)**，第一動作 Read `[[references/segment-ingestion.md]]`。建檔與環境準備完成後自動推進至策略段（Phase 1）。
+- 中文口語呼叫如「小D看案子」「幫我看這個案子」「叫小D」「CD看案子」等，只要**尚未在本次對話選定過專案資料夾**，一律視為 New request，同樣先走 Phase 0 讀取 `segment-ingestion.md` 執行掃描與詢問，不可跳過。
+- Already selected folder / have ingested brief / "Find an insight" → **策略段 (Phase 1 → 2)**，第一動作 Read `[[references/segment-strategy.md]]`。
+- "Generate ideas" / have an insight, need concepts → **創意段** Phase 3（第一動作 Read `[[references/segment-creative.md]]`，先過進場檢查）
 - "Evaluate the idea" / "improve the concept" / "critique" → **創意段** Phase 4（先過進場檢查）
 - "Finalize" / "prepare a presentation" → **創意段** Phase 5
-- Full cycle (standard request) → 策略段跑完 → 停住等指令 → 創意段
+- Full cycle (standard request) → 進入 Phase 0 導入 → Phase 1 & 2 策略對齊 → 策略段結案停住等指令 → 創意段
 
 ### 常駐硬閘門（不依賴段落包即生效）
 
@@ -198,9 +200,9 @@ Determine the phase from context:
 
 ## References
 
-- **[[references/segment-strategy.md]]** — 策略段完整流程：Phase 0 INGESTION / Phase 1 INTAKE / Phase 2 INSIGHT（含對齊表格式、策略確認點條文、存檔步驟）
+- **[[references/segment-strategy.md]]** — 策略段完整流程：Phase 1 INTAKE / Phase 2 INSIGHT（含對齊表格式、策略確認點條文、存檔步驟）
 - **[[references/segment-creative.md]]** — 創意段完整流程：Phase 3 IDEATION / Phase 4 EVALUATE / Phase 5 ARTICULATE / Phase 6 DEBRIEF
-- **[[references/phase0-build-standard.md]]** — Phase 0 建檔格式模板與背景處理機制
+- **[[references/segment-ingestion.md]]** — Phase 0 INGESTION 導入與設定工作包
 - **[[references/methods-catalog.md]]** — 20+ methods as actionable cards: SIT, TRIZ, SCAMPER, Bisociation, Synectics, Oblique Strategies, Morphological Analysis, and more
 - **[[references/method-selection-matrix.md]]** — routing: task type → recommended method triplet, rotation rules between passes
 - **[[references/scoring-calibration.md]]** — detailed rubric for each score (1-10) per criterion, HumanKind scale, Grey scale, Gap Analysis, anti-inflation rules, multi-perspective panel
@@ -213,7 +215,7 @@ Determine the phase from context:
 - **[[references/activation-toolkit.md]]** — 9 activation formats, Non-advertising vs Execution test, mechanic patterns, decision matrix
 - **[[references/legendary-patterns.md]]** — P01-P18 pattern map with mechanics, canonical examples, saturation counts, Pre-Mortem template, calibration workflow
 - **[[references/tag-schema.md]]** — case library frontmatter contract (17 axes, enum values)
-- **[[references/legendary-campaigns/MOC-index.md]]** — entry point to 585 legendary campaigns library; see also MOC-pattern, MOC-emotion, MOC-format, MOC-industry, MOC-budget for axis-specific lookups
+- **[[references/legendary-campaigns/MOC-index.md]]** — entry point to 586 legendary campaigns library; see also MOC-pattern, MOC-emotion, MOC-format, MOC-industry, MOC-budget for axis-specific lookups
 - **[[references/legendary-campaigns/PIPELINE-yt-to-cards.md]]** — how to expand the library: YouTube case study playlist → yt-dlp subtitles → VTT cleaning → card generation → MOC update; includes batch script path and execution log
 - **[[assets/output-templates.md]]** — templates: Creative Concept One-Pager, Top-3 Presentation, Campaign Platform, Quick Brief Response
 - **[[changelog.md]]** — version history and tuning records for `creative-director` (小D) skill
