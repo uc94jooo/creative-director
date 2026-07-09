@@ -185,6 +185,8 @@ Determine the phase from context:
 
 ## Anti-Pitfall Rules
 
+> 跨技能共通底線(反操控清單、防資訊編造、防越權、動態存檔路徑)見工作區全域 `AGENTS.md`;以下為本技能特有規則。
+
 1. **NEVER** skip Phase 2 (insight). Without an insight, ideas are decoration
 2. **NEVER** give 9+ without justification. Name a real campaign that this idea surpasses or stands alongside
 3. **NEVER** use a single method for all ideas. Minimum 3 from different categories
