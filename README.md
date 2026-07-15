@@ -1,342 +1,84 @@
-# Creative Director Skill — 小D（zh-TW Fork）
+# Creative Director 小D
 
-> **Fork Notice / 分支說明**
->
-> 本專案 fork 自 [smixs/creative-director-skill](https://github.com/smixs/creative-director-skill)（作者 Sergey Shima，與 Paul Deadcough 協作），MIT 授權。原作的方法論核心（20+ 創意方法、六權重評分、Cannes/HumanKind 校準、585 案例庫、P01-P18 pattern map）全數保留。
+Creative Director 小D 是一個 Claude 技能，讓 AI 用世界級廣告公司的方法論扮演創意總監。你丟給它一包素材，它陪你把策略磨清楚，再發想創意、誠實打分，產出更好的行銷提案。
 
-## 修改緣起
+## 緣起
 
-原作是一套完整的英文創意總監方法論。我（Johs／[uc94jooo](https://github.com/uc94jooo)）在台灣行銷實務中使用時，需要的不只是翻譯，而是讓它接上繁體中文工作流與真實提案節奏，於是逐步改出這個版本——暱稱「小D」。
+原作是一套英文的創意總監方法論技能（[smixs/creative-director-skill](https://github.com/smixs/creative-director-skill)）。作者在台灣行銷實務中使用時，需要的不只是翻譯，而是接上繁體中文工作流與真實提案節奏，於是 fork 逐步改造成這個版本。人格取 Creative Director 的字首 D 為名，暱稱「小D」。
 
-主要修改：
+## 怎麼召喚
 
-- **繁中在地化與「小D」人格**：中文口語呼叫路由（「小D看案子」即進流程）
-- **Phase 0 互動式建檔**：`專案資料區/` 專案資料夾工作流，多來源疊加匯入（檔案／貼上／網址），嚴禁代選的防呆閘門
-- **13 點策略對齊表工作流**：Phase 1 前 6 項限制與戰場 → 資訊充足度診斷提問 → Phase 2 完整 13 項 → 人工介入點（策略確認）→ 版本化存檔（不覆寫）
-- **Hidden Notes 隱藏檔系統**：`.cd-notes/` 推演留痕（insight-pass 跟「表的變化」走、dialogue-log 跟「週期」走）、線頭題庫、新手／老手訊號校準
-- **兩段式架構**：策略段（Phase 0-2，三件套結案）／創意段（Phase 3-6，憑對齊表進場），支援跨 session 斷點續作與一表多輪發想
-- **隱性背景策略推演引擎**：內部框架推演、對外全部轉譯為商務白話的雙層輸出防線
-- **十步驟標準週期骨架**與六條常駐硬閘門，所有條文以低解讀力模型為適配基準撰寫
+對話中說「小D」「CD」「Creative Director」任一個即可，說「小D看案子」會直接進建檔流程。技能資料夾名稱維持 `creative-director`。
 
-完整修改史見 [changelog.md](changelog.md)。
+## 技能上下游
 
-## Phase Router（本 fork 版）
+同作者的三個技能，可以在同一個對話裡接力：
 
-上游依單一序列 Phase 1 → 5 路由；本 fork 改為**兩段式**，依情境判定進入點：
+| 技能 | 人格 | 負責 |
+|---|---|---|
+| creative-director（本技能） | 小D | 定策略、出創意概念 |
+| [carousel-amy](https://github.com/uc94jooo/carousel-amy) | Amy | 說故事、做載體（排版、配圖、網頁） |
+| [metacopy](https://github.com/uc94jooo/metacopy-tello) | 太羅 | 寫文案 |
 
-| 情境 | 路由 |
-|------|------|
-| 新 brief／新請求／raw file | **策略段**（Phase 0 建檔 → 1 intake → 2 洞察與對齊表） |
-| 中文口語呼叫（「小D看案子」等），尚未選定專案資料夾 | 一律視為新請求，先走策略段 Phase 0 掃描與詢問 |
-| 「找洞察」／有 brief 沒洞察 | 策略段 Phase 2 |
-| 「生成創意」／有洞察要概念 | **創意段** Phase 3（先過進場檢查） |
-| 「評估創意」／「改進概念」／「critique」 | 創意段 Phase 4（先過進場檢查） |
-| 「定稿」／「準備提案」 | 創意段 Phase 5 |
-| Full cycle | 策略段跑完 → **停住等指令** → 創意段 |
+交棒接口是版本化的策略對齊表明檔（`01_對齊表_[案名].md`），傳棒前有放行閘，由你點頭才交給下一棒。跨技能共通底線（反操控、防編造、防越權）定義在工作區 `AGENTS.md`。
 
-段落邊界：策略段以三件套結案（對齊表明檔 vX＋insight-pass 串＋dialogue-log），**不自動滑入 Phase 3**。創意段進場檢查：偵測既有 `*_策略對齊表*.md` → 載入直接開工，不重跑策略段（支援跨 session 續作、一表多輪發想）。
+## 幫你完成什麼
 
-## 版權
+從雜亂素材到可提案的創意概念，整條路它都接手：
 
-- 原作：Copyright (c) 2026 Sergey Shima，MIT License
-- 本 fork 之修改：Copyright (c) 2026 Johs (uc94jooo)，同以 MIT License 釋出
+1. 建檔。檔案、貼上文字、網址都收，掃描後建立專案資料夾與主規劃檔。
+2. 對齊策略。產出 13 點策略對齊表，資訊不足時主動提問，磨到你點頭通過才存檔。
+3. 發想創意。每輪用三種以上不同路數的創意方法產出 8 至 12 個概念，先發散再收斂。
+4. 誠實評估。多維度打分，分數不到門檻就換方法重改，最多五輪。
+5. 交付與交棒。輸出提案格式的最終文件，並把定案策略傳給下游技能繼續加工。
 
-詳見 [LICENSE](LICENSE)。
+## 解決你什麼痛點
 
----
+用一般 AI 想創意，常見的下場是這幾種：
 
-*以下為上游原始 README（描述上游 v2.0 的內容與結構，部分章節在本 fork 已重構，以本 repo 的 SKILL.md 與 changelog.md 為準）：*
+- 自由聯想式發想，量很大、質很平，而且常在不知情的狀況下抄到早已存在的名作。
+- AI 天性愛奉承，自己打的分數一路灌水，你分不出哪個點子真的站得住。
+- 策略還沒對齊就開始想創意，做到一半才發現方向錯，前面全部重來。
+- 對話一長就失憶，換個 session 之前的推演全部歸零。
 
----
+## 和其他類似技能有什麼不同
 
-<h1 align="center">There is no creativity in AI.<br>There are the methodologies of winners.</h1>
+和一般 brainstorming 技能比：別人給你一串點子清單就結束，Creative Director 小D 堅持先找對洞察再想創意，每個點子都有分數、有改進方向、有跟真實名作的對照。
 
-<p align="center"><sub>Креатива в AI нет. Есть методологии победителей.</sub></p>
+和上游原作比：原作是單線英文流程，本 fork 改成策略、創意兩段式，中間加上人工確認點，並接上繁中口語呼叫、互動式建檔、隱藏筆記系統。
 
-<h1 align="center">🎬 Creative Director Skill</h1>
+和本工作區的其他創作技能比：Creative Director 小D 只管策略與創意概念，不寫成品。文案是太羅（metacopy）的事，社群輪播載體是 Amy（carousel-amy）的事，界線清楚，靠交棒單銜接。
 
-[![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet?style=flat-square)](https://docs.anthropic.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-[![Methods 20+](https://img.shields.io/badge/Methods-20%2B-orange?style=flat-square)](#methodologies-20)
-[![Case Library](https://img.shields.io/badge/Cases-571-blue?style=flat-square)](#case-library)
-[![Version](https://img.shields.io/badge/Version-2.0-red?style=flat-square)](#whats-new-in-v20)
+## 為什麼能解決
 
-> Created in collaboration with **Paul Deadcough**.
+方法論取代自由聯想。內建 20 多種結構化創意方法，每一輪發想強制混用不同路數，不會同一招想到底。
 
-An AI creative director that generates advertising concepts using world-class methodologies, scores them against Cannes/D&AD-calibrated criteria, recursively refines until the quality threshold is reached, and **calibrates every idea against a library of 571 legendary campaigns** to detect saturation and ensure originality.
+點子新不新，比對真實案例，不是 AI 自己說了算。內建經典廣告案例庫（上游原有 571 篇，本 fork 持續擴充與淘汰中，現況以 `references/legendary-campaigns/MOC-index.md` 統計為準），每個點子都拿去跟史上名作比對，同樣的手法已經被用過很多次，分數就高不起來，老梗混不進來。
 
-Not a brainstorming toy. A structured creative process that mirrors how top agencies (Droga5, Wieden+Kennedy, Mother) actually work — insight before ideas, methodology over free association, honest evaluation over flattery, **calibration against the canon** over invention from zero.
+評分不灌水。拿真實得獎作品當標準，好壞照實講，還會反過來攻擊自己最喜歡的點子，測試它到底站不站得住。
 
----
+流程有人工閘門。策略沒經你確認通過，不會開始發想；發想與交棒前也都要你點頭，AI 不會自作主張往前衝。
 
-## What's New in v2.0
+推演有留痕。每個專案的 `.cd-notes/` 隱藏資料夾記錄推演過程與對話總帳，換個 session 也能接著做，同一張對齊表能支撐多輪發想。
 
-- **571-case library** with full Insight / Mechanic / Why-it-worked / Steal structure on every card
-- **17-axis frontmatter schema** — every card tagged across pattern (P01-P18), industry, format, emotion (Tier 1/2/3), budget, idea_type (Pollard 7-level), awards, and more
-- **6 MOCs** (Maps of Content) for fast lookup by pattern, emotion, format, industry, budget, and chronological index
-- **4-point case library integration** in workflow — priming before generation, originality empirical cap, RESTART case-soaking, pattern calibration before exit
-- **3 maintenance scripts** (Python via `uv`) — schema validation, MOC generation, graph wikilinks
-- **Pollard 7-level idea taxonomy** replacing the previous 3-level system
-- **3-tier emotion hierarchy** with 30+ specific emotion values
-- **Activation toolkit** with 9 formats and the Non-advertising vs Execution test
-- **Pre-Mortem template** before final delivery
+## Fork 來源與致謝
 
-Quality reviewed via [`skill-conductor`](https://github.com/smixs/skill-conductor): **41/50 production-grade** (Discovery 7/10, Clarity 9/10, Efficiency 7/10, Robustness 8/10, Completeness 10/10).
+原作 [smixs/creative-director-skill](https://github.com/smixs/creative-director-skill)，作者 Sergey Shima，與 Paul Deadcough 協作，MIT 授權。方法論核心（20+ 創意方法、六權重評分、Cannes/HumanKind 校準、案例庫、P01-P18 模式地圖）全數保留，本 fork 的完整改動史見 [changelog.md](changelog.md)。
 
----
+方法論源頭：Jacob Goldenberg（SIT）、Genrich Altshuller（TRIZ）、Edward de Bono（水平思考）、Arthur Koestler（Bisociation）、Leo Burnett（HumanKind）、Mark Pollard（七層級創意分類）、Clayton Christensen（JTBD）等。案例庫取材自 D&AD、Cannes Lions、One Show、Effie 等獎項名錄。
 
-## What It Does
-
-Feed it a brief in any format — text, voice transcript, PDF, raw notes — and it runs a full creative cycle:
-
-1. **INTAKE** — extracts the brief's DNA: product, audience, objectives, constraints + classifies the required idea level using Pollard 7-level taxonomy (business / brand / tagline / advertising / campaign / non_advertising / execution)
-2. **INSIGHT** — mines consumer insights using 7 proven techniques (Mark Pollard, JTBD, Tension Spotting, HMW, Abstraction Laddering)
-3. **IDEATION** — primes against the canon (scans 5-7 cases from the relevant MOC), then generates 8-12 ideas using 3 methods from different categories (structural × associative × disruptive), rotating between 20+ methodologies, with a Tension test on each
-4. **EVALUATE + REFINE** — scores against 6 weighted criteria + HumanKind + Grey Scale, then recursively improves; **Originality is capped empirically** by case-library saturation (3+ canonical cases of the same mechanic → cap at 7); when stuck, RESTARTs through case-soaking (read 8-12 canonical cards, remix allowed); Pattern Calibration + Pre-Mortem before exit
-5. **ARTICULATE** — outputs in a presentation-ready format (one-pager, top-3, campaign platform, or quick response)
-
-You can also enter at any phase: jump to insight mining, evaluate an existing idea, or generate concepts from a known insight.
-
-## Why This Exists
-
-Most AI "creative" tools generate ideas by free association — producing volume without structure. The result: hundreds of mediocre concepts that nobody can evaluate, often unknowingly recycling work that already exists.
-
-This skill enforces the discipline that separates award-winning work from filler:
-
-- **Insight-first** — no ideation without a validated consumer tension
-- **Structural methods** — SIT, TRIZ, SCAMPER, Bisociation, Synectics, not "give me 10 ideas"
-- **Empirical originality** — every idea is checked against 571 real campaigns; if 3+ canonical cases use the same mechanic, originality is capped, not subjectively claimed
-- **Honest scoring** — calibrated against real Cannes winners, with anti-inflation rules
-- **Recursive refinement** — weak criteria get targeted improvement using different methods each pass
-- **Case-soaking on plateau** — when ideas plateau, the skill reads 8-12 canonical cards to re-train its sense for what a strong insight feels like; combining/remixing existing patterns is explicitly allowed (this is how Cannes-grade work is built)
-- **Kill Your Darlings** — the skill argues against its own favorite ideas to test their strength
-- **Pre-Mortem** — before delivery, simulates failure and surfaces the most likely failure modes
-
-## What's Inside
-
-```
-creative-director/
-├── SKILL.md                                  # Core skill — phase router + 5-phase workflow
-├── assets/
-│   └── output-templates.md                   # 4 presentation formats
-├── scripts/                                  # Python via uv (PEP 723 inline deps)
-│   ├── validate_schema.py                    # Frontmatter validation against tag-schema
-│   ├── generate_mocs.py                      # Builds 6 MOCs from cards
-│   └── generate_links.py                     # Adds Related sections (idempotent)
-└── references/
-    ├── tag-schema.md                         # Single source of truth — 17-axis frontmatter contract
-    ├── idea-taxonomy.md                      # Pollard 7-level taxonomy
-    ├── emotion-hierarchy.md                  # Tier 1/2/3 + 30+ specific emotion values
-    ├── activation-toolkit.md                 # 9 activation formats + Non-ad vs Execution test
-    ├── legendary-patterns.md                 # P01-P18 mechanics + Pre-Mortem template
-    ├── methods-catalog.md                    # 20 creative methodologies as executable cards
-    ├── method-selection-matrix.md            # Task → method routing + rotation rules
-    ├── insight-mining.md                     # 7 insight discovery techniques
-    ├── scoring-calibration.md                # Detailed rubrics + calibration anchors
-    ├── creative-constitution.md              # 3-layer evaluation system + feedback rules
-    ├── storytelling-frameworks.md            # 6 narrative frameworks for advertising
-    └── legendary-campaigns/                  # 571-case library
-        ├── README.md                         # Library guide
-        ├── MOC-index.md                      # All 571 cards by year DESC
-        ├── MOC-pattern.md                    # Grouped by P01–P18 (18 mechanics)
-        ├── MOC-emotion.md                    # Grouped by emotion_tier (3 → 2 → 1)
-        ├── MOC-format.md                     # Grouped by category (film/integrated/stunt_pr/...)
-        ├── MOC-industry.md                   # Grouped by industry vertical
-        ├── MOC-budget.md                     # Grouped by budget (low/medium/high)
-        └── cards/                            # 571 individual cards (flat namespace)
-            └── {id}.md
-```
-
-## Case Library
-
-571 advertising campaigns from 1950–2025, tagged across **17 axes**, with full structural analysis on every card.
-
-### Card structure
-
-Each card has YAML frontmatter (17 axes — see `references/tag-schema.md`) + 4 sections:
-
-- **Insight** — the human truth the campaign exploits (one sentence)
-- **Mechanic** — what was actually executed
-- **Why it worked** — psychological / cultural / structural reason
-- **Steal** — pattern-level borrow strategy
-- **Related** — auto-generated wikilinks (pattern hub + 2 sibling cards + emotion match)
-
-### Tag schema (17 axes)
-
-`id`, `title`, `brand`, `agency`, `year`, `country`, `region`, `industry`, `pattern[]` (P01–P18), `category`, `idea_type` (Pollard 7-level), `involvement`, `channel`, `duration`, `goal[]`, `budget`, `emotion[]`, `emotion_tier` (1/2/3), `insight_domain`, `media_epoch`, `awards[]`, `quality_score` (HumanKind 1–10), `scalability`, `risk`.
-
-### 18 patterns (P01–P18)
-
-Format as Idea · Enemy or Conflict · Behavior Inversion · Brand as Activist · Cultural Hijack · Limitation as Power · Invisible Brand · Craft as Message · User as Co-Author · Serialization & Ritual · Absurd as Carrier · Social Experiment · Truth Telling · Product as Proof · Benefit Hyperbole · Long-form Drama · Design as Idea · Tech as Canvas
-
-### Lookup strategies
+## 安裝與執行
 
 ```bash
-# Browse by axis — open the matching MOC
-# Each line has inline-context (brand · year · format · emotion · budget · top_award)
-
-# Filter by combination — ripgrep on frontmatter
-rg -l "^budget: low$" cards/ | xargs rg -l "^emotion_tier: 3$"
-
-# All P11 cases since 2020
-rg -l "P11" cards/ | xargs rg -l "^year: 202"
-
-# All canonical cases for QSR
-rg -l "^industry: qsr$" cards/ | xargs rg -l "^quality: canonical$"
+git clone https://github.com/uc94jooo/creative-director.git ~/.claude/skills/creative-director
 ```
 
-### Saturation map (originality pressure)
+本 fork 已扁平化，`SKILL.md` 就在 repo 根目錄，clone 完重啟 Claude Code session 即生效。
 
-| Pattern | Saturation | Originality cap |
-|---------|-----------|----------------|
-| P11 (Absurd as Carrier), P16 (Long-form Drama), P09 (User as Co-Author) | high (>50 cases) | ≤6 unless structurally new variant |
-| P02, P10, P12, P14, P18 | medium | ≤7 if 3+ canonical use same mechanic |
-| P01, P15 | low | room for novelty |
+## 不適用範圍
 
-This is empirical saturation, not subjective novelty.
+媒體採購與預算分配、製作管理、品牌識別設計、成品文案（交給太羅）、市場調查數據收集。
 
-## Methodologies (20+)
+## 授權
 
-| Category | Methods |
-|----------|---------|
-| **Structural** | SIT/Goldenberg Templates, SCAMPER, TRIZ (10 principles), Morphological Analysis |
-| **Association** | Bisociation, Random Entry, Forced Connections, Synectics |
-| **Inversion** | Reverse Brainstorming, Worst Possible Idea, Provocation PO |
-| **Perturbation** | Oblique Strategies, Six Thinking Hats, Disney Creative Strategy |
-| **Volume** | Crazy 8s, Brainwriting 6-3-5, Starbursting |
-| **Bonus** | First Principles Thinking, Lateral Thinking Toolkit, Design Sprint Sketch |
-
-## Evaluation System
-
-Three parallel scoring systems calibrated against real campaigns:
-
-- **6 Weighted Criteria** — Originality (0.25, empirically capped by case library), Strategic Fit (0.20), Emotional Response (0.20, Tier 1/2/3 hierarchy), Feasibility (0.15), Scalability (0.10), Simplicity (0.10)
-- **HumanKind Scale** (Leo Burnett) — 1-10, from "Destructive" to "Changes the World"
-- **Grey Scale** (Grey Group) — 1-10, from "Toxic" to "Best in the World"
-
-Anti-inflation rules: batch control, normal distribution enforcement, real analogues test, specificity test, time test, **empirical saturation cap from case library**.
-
-## Idea Taxonomy (Pollard 7-level)
-
-| Level | When required | Lifespan |
-|-------|---------------|----------|
-| `business` | new venture, repositioning the entire company | years |
-| `brand` | rebranding, brand platform — "what does the brand stand for?" | 5–10+ years |
-| `tagline` | short phrase that crystallizes brand idea | 5–10+ years |
-| `advertising` | central thought across all comms — recognizable without logo | 3–5 years |
-| `campaign` | seasonal campaign, product launch, promo | 3–12 months |
-| `non_advertising` | activation/utility/cultural object that lives without ads | varies |
-| `execution` | one-off channel/format/mechanic | days–weeks |
-
-**Activation diagnostic:** if brief mentions activation/stunt/utility — apply the test "remove the campaign, does it still have meaning?" → Yes = `non_advertising` / No = `execution`.
-
-## Emotion Hierarchy (Tier 1/2/3)
-
-- **Tier 1 (forgettable):** happy, sad, angry, afraid → score ≤ 6
-- **Tier 2 (memorable):** nostalgic, defiant, proud, ironic, etc. → score 6–8
-- **Tier 3 (greatness):** bittersweet pride, ironic sincerity, vulnerable defiance, etc. → score 8–10
-- **Score 9+ requires Tier 3.**
-
-## How Recursion Works
-
-```
-Generate ideas (3 methods, 8-12 ideas, primed against canon)
-        ↓
-Tension test on each idea
-        ↓
-Score top 3 (6 criteria + HumanKind + Grey, originality capped by saturation)
-        ↓
-    Score ≥ 9? ──→ YES → Pattern Calibration + Pre-Mortem → Output
-        ↓ NO
-Identify weak criteria → Apply different method → Rescore
-        ↓
-    Plateau? ──→ YES → RESTART via case-soaking
-        ↓             (read 8-12 canonical cards, remix allowed)
-        ↓ NO
-    Continue refinement
-        ↓
-    5 passes? ──→ YES → Output best + honest assessment
-```
-
-## Storytelling Frameworks
-
-Story Spine (Pixar) · Sparkline (Nancy Duarte) · Freytag's Pyramid · Monroe's Motivated Sequence · Pixar Rules · Hero's Journey (StoryBrand)
-
-## Installation
-
-### Claude Code (recommended)
-
-```bash
-git clone https://github.com/smixs/creative-director-skill.git
-cp -r creative-director-skill/creative-director ~/.claude/skills/
-```
-
-After installation, restart Claude Code session (`/clear` or new session) to pick up the skill.
-
-### Claude Projects
-
-Add the files to your Claude Project's knowledge base. Upload all files from `creative-director/` — `SKILL.md` is the entry point, it references other files via `[[wikilinks]]`.
-
-### Other AI Agents (Cursor, Windsurf, GPT, Gemini)
-
-The skill works with any AI agent that supports structured instructions — the core logic is in markdown files, no platform lock-in. Copy the `creative-director/` folder to your project or skills directory.
-
-## Maintenance Scripts
-
-Three Python scripts (run via `uv run`, PEP 723 inline deps — no manual setup):
-
-```bash
-cd creative-director
-uv run scripts/validate_schema.py        # Validate all card frontmatter
-uv run scripts/generate_mocs.py          # Rebuild 6 MOCs from cards
-uv run scripts/generate_links.py         # Rebuild Related sections (idempotent)
-```
-
-Run pipeline: edit/add cards → validate → regenerate MOCs → regenerate links.
-
-## Usage Examples
-
-**Full creative cycle:**
-> "Come up with a campaign for [brand]. Target audience: [who]. Budget: [range]. Channels: [where]."
-
-**Insight mining:**
-> "Find a consumer insight for [category]. The brief says [context]."
-
-**Evaluate an existing idea:**
-> "Evaluate this concept: [description]. The brief objective was [goal]."
-
-**Activation / non-advertising:**
-> "Need a PR-stunt for [brand]. Low budget, must drive earned media in a week. Not a campaign — a one-shot activation."
-
-**Quick ideation:**
-> "Need 5 concepts for [brand] social media posts about [topic]."
-
-## What It's Not For
-
-- Media planning or budget allocation
-- Production management
-- Brand identity / logo design
-- Final copywriting (it generates concepts, not polished copy)
-- Market research data collection
-- Brand positioning warmaps (use a dedicated positioning skill)
-
-## Limitations & Honest Notes
-
-- **Auto-trigger in `claude -p` mode is unreliable.** This is an advisory skill — when invoked through one-shot CLI, the model often answers creative briefs directly without consulting it. For consistent behavior in interactive sessions, invoke explicitly or share a detailed brief (>500 chars with structure).
-- **571 source URLs are unverified.** Library was built from public award-show indexes; verify links manually before citing in client work.
-- **12 cards have `confidence: low`** with `verification_required: true` — these should be cross-checked against external sources. The skill prefers `quality: canonical` cards for calibration.
-- **Library is static.** New campaigns from 2026+ are not auto-added; periodic manual extension required.
-
-## Credits
-
-Created in collaboration with **Paul Deadcough**.
-
-Built on methodologies from: Jacob Goldenberg (SIT), Genrich Altshuller (TRIZ), Edward de Bono (Lateral Thinking, Six Hats, PO), Arthur Koestler (Bisociation), William Gordon (Synectics), Brian Eno (Oblique Strategies), Nancy Duarte (Sparkline), Joseph Campbell / Donald Miller (Hero's Journey / StoryBrand), Leo Burnett (HumanKind), Mark Pollard (Strategy + 7-level Taxonomy), Clayton Christensen (JTBD).
-
-Creative Constitution based on the Voskresensky/IKRA approach.
-
-Case library curated from D&AD, Cannes Lions, One Show, Webby, and Effie shortlists 1950–2025.
-
-## License
-
-MIT — use it, fork it, make better ads.
+MIT。原作 Copyright (c) 2026 Sergey Shima；本 fork 修改 Copyright (c) 2026 Johs (uc94jooo)。詳見 [LICENSE](LICENSE)。

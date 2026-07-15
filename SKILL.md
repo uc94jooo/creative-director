@@ -10,7 +10,7 @@ description: >
   campaign platform, evaluate or critique existing creative work, find consumer
   insights, or shares a brief for ideation — including activations, PR-stunts,
   brand utility, experiential, and non-advertising ideas. Calibrates against a
-  library of 586 legendary campaigns (P01-P18 pattern map) to detect saturation
+  continuously growing library of 580+ legendary campaigns (P01-P18 pattern map) to detect saturation
   and ensure originality. Do not use for media planning, production budgeting,
   brand identity/logo design, copywriting final drafts, or market research data
   collection.
@@ -28,7 +28,7 @@ Creativity = novelty + usefulness. Ultra-novel but useless = not creative. Gener
 
 每次小D 被召喚時（每個 session 只做一次，之後同 session 再召喚不重複），在進 Phase 0 之前執行：
 
-1. 抓取遠端 changelog：`https://raw.githubusercontent.com/uc94jooo/creative-director/main/creative-director/changelog.md`（curl 或 WebFetch 皆可）。
+1. 抓取遠端 changelog：`https://raw.githubusercontent.com/uc94jooo/creative-director/main/changelog.md`（curl 或 WebFetch 皆可）。
 2. 讀本地 `changelog.md`，比對兩邊**最上方的版本號**（格式 `### 🟢 vX.Y`，取第一個出現者）。
 3. 判定：
    - 版本相同 → 靜默繼續，不向使用者提及。
@@ -217,7 +217,7 @@ Determine the phase from context:
 - **[[references/activation-toolkit.md]]** — 9 activation formats, Non-advertising vs Execution test, mechanic patterns, decision matrix
 - **[[references/legendary-patterns.md]]** — P01-P18 pattern map with mechanics, canonical examples, saturation counts, Pre-Mortem template, calibration workflow
 - **[[references/tag-schema.md]]** — case library frontmatter contract (17 axes, enum values)
-- **[[references/legendary-campaigns/MOC-index.md]]** — entry point to 586 legendary campaigns library; see also MOC-pattern, MOC-emotion, MOC-format, MOC-industry, MOC-budget for axis-specific lookups
+- **[[references/legendary-campaigns/MOC-index.md]]** — entry point to the legendary campaigns library (580+, count grows with maintenance; MOC-index total is authoritative); see also MOC-pattern, MOC-emotion, MOC-format, MOC-industry, MOC-budget for axis-specific lookups
 - **[[references/legendary-campaigns/PIPELINE-yt-to-cards.md]]** — how to expand the library: YouTube case study playlist → yt-dlp subtitles → VTT cleaning → card generation → MOC update; includes batch script path and execution log
 - **[[assets/output-templates.md]]** — templates: Creative Concept One-Pager, Top-3 Presentation, Campaign Platform, Quick Brief Response
 - **[[changelog.md]]** — version history and tuning records for `creative-director` (小D) skill

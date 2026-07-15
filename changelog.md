@@ -6,6 +6,14 @@
 
 ## 📖 變更歷史
 
+### 🟢 v2.0.5 (2026-07-15)
+* **修改時間**：2026-07-15 (Local Time)
+* **說明**：
+  * **README 全面重寫**：刪除縫合在尾端的上游英文原始 README(近 300 行,內容已過時:案例數 571、上游安裝路徑、v2.0 巢狀目錄樹),改為單一繁中版本。結構以「這是什麼/幫你完成什麼/解決什麼痛點/為什麼能解決/和類似技能的差異」為核心,後接 fork 來源、技能上下游(小D→Amy→太羅 產線與交棒接口)、安裝與執行。案例庫數量不再寫死(上游原有 571 篇,fork 持續擴充淘汰,以 MOC-index.md 統計為準)。
+  * **SKILL.md 版本檢查網址修正**:遠端 changelog 抓取路徑仍指向 v2.0.1 扁平化前的舊巢狀路徑(`main/creative-director/changelog.md`,已 404),修正為 `main/changelog.md`,版本檢查功能恢復運作。
+  * **SKILL.md 案例數改不寫死**:frontmatter description 與 References 兩處「586 legendary campaigns」改為「580+ 且持續擴充,以 MOC-index 統計為準」,日後擴充案例庫不需回頭改 SKILL.md。
+  * **scripts/ 移除 git 追蹤**:案例庫維護腳本(validate_schema/generate_mocs/generate_links)自 git 移除追蹤並加入 .gitignore,本地保留可用,不再隨 repo 發布(比照 johs-notes/ 處理方式)。
+
 ### 🟢 v2.0.4 (2026-07-09)
 * **修改時間**：2026-07-09 (Local Time)
 * **說明**：
