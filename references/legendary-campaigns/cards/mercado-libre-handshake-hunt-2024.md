@@ -5,13 +5,13 @@ brand: Mercado Libre
 agency: GUT
 year: 2024
 country: BR
-region: latin_america
+region: latam
 industry: retail
 pattern: [P01, P08]
 category: integrated
 idea_type: campaign
 involvement: lean_forward
-channel: tv
+channel: physical
 duration: short_run
 goal: [sales, awareness, engagement]
 budget: medium

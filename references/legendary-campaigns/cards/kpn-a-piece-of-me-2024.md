@@ -13,11 +13,11 @@ idea_type: campaign
 involvement: lean_forward
 channel: digital
 duration: short_run
-goal: [awareness, social_change, engagement]
+goal: [awareness, purpose, engagement]
 budget: medium
 emotion: [vulnerable_defiance, witnessed]
 emotion_tier: 3
-insight_domain: safety
+insight_domain: survival
 media_epoch: social
 awards: [cannes_grand_prix]
 quality_score: 8

@@ -127,6 +127,7 @@ Two-letter ISO code (uppercase) or `Global` or `unknown`. Examples: `US`, `UK`, 
 ### `involvement`
 - `user_co_author` — audience generates content
 - `participation` — active step required (challenge, vote, scan)
+- `lean_forward` — attentive, absorbed engagement with no required action (watched closely, but didn't do anything) — sits between `passive_view` and `participation`
 - `passive_view` — watch/listen only
 
 ### `channel`
@@ -136,6 +137,7 @@ Two-letter ISO code (uppercase) or `Global` or `unknown`. Examples: `US`, `UK`, 
 
 ### `duration`
 - `moment` — one-shot stunt (≤24h)
+- `short_run` — single execution or pop-up running longer than a day but short of a full campaign (days to ~10 weeks) — e.g. a temporary exhibit, a single-edition print+digital push, a limited residency
 - `campaign` — 3–6 months
 - `seasonal` — recurring annually
 - `ongoing` — permanent ritual / always-on
@@ -172,6 +174,8 @@ See `references/emotion-hierarchy.md` for the authoritative 30+ values and tier 
 - `belonging` — being accepted
 - `autonomy` — control over my life
 - `survival` — basic safety/needs
+- `novelty` — what feels fresh/surprising (distinct from `joy`: specifically the drive toward newness, not pleasure generally)
+- `fairness` — a wrong named and corrected; justice restored (distinct from `community`: about moral repair, not belonging)
 
 ### `media_epoch`
 - `tv_first` — primary distribution = broadcast
@@ -180,6 +184,8 @@ See `references/emotion-hierarchy.md` for the authoritative 30+ values and tier 
 - `ooh` — out-of-home led
 - `owned` — brand channel (app, store, site)
 - `hybrid` — multi-vector
+- `ai_era` — generative AI is the production or personalization mechanism itself, not just a tool used to make something else
+- `data_first` — a data/analytics artifact (spreadsheet, script, dataset, algorithm) is the creative medium, not just the targeting layer behind one
 
 ### `awards`
 - `cannes_grand_prix`

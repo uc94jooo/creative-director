@@ -11,9 +11,9 @@ pattern: [P03, P13]
 category: ooh_print
 idea_type: execution
 involvement: passive_view
-channel: print
-duration: one_shot
-goal: [awareness, social_change]
+channel: physical
+duration: short_run
+goal: [awareness, purpose]
 budget: low
 emotion: [dignified_grief, bittersweet_pride]
 emotion_tier: 3

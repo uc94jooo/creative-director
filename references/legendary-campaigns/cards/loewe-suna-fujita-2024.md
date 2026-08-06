@@ -6,12 +6,12 @@ agency: unknown
 year: 2024
 country: ES
 region: europe
-industry: fashion
+industry: fashion_luxury
 pattern: [P05, P16]
 category: integrated
 idea_type: campaign
 involvement: lean_forward
-channel: multi
+channel: hybrid
 duration: short_run
 goal: [awareness, engagement]
 budget: high

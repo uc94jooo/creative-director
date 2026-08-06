@@ -1,18 +1,18 @@
 ---
-id: dramamine-last-barf-bag-2024
+id: dramamine-last-barf-bag-2023
 title: "The Last Barf Bag"
 brand: Dramamine
 agency: Wunderman Thompson
-year: 2024
+year: 2023
 country: US
 region: north_america
 industry: healthcare
 pattern: [P10, P11]
 category: experiential
-idea_type: stunt
+idea_type: non_advertising
 involvement: lean_forward
-channel: experiential
-duration: one_shot
+channel: physical
+duration: short_run
 goal: [awareness, engagement]
 budget: low
 emotion: [ironic_sincerity, wry_affection]
@@ -28,7 +28,7 @@ quality: full
 source_url: https://www.youtube.com/watch?v=ZgRQ5UCbMBg
 ---
 
-# The Last Barf Bag (Dramamine · 2024)
+# The Last Barf Bag (Dramamine · 2023)
 
 ## Insight
 Dramamine works so well it is effectively killing the barf bag — and barf bag collectors, a small but devoted community of over 7,500 specimens, are facing extinction because of it. The brand's greatest product success is simultaneously its most absurd cultural crime. Admitting this with complete sincerity is funnier and more memorable than any product benefit claim.

@@ -9,15 +9,15 @@ region: north_america
 industry: healthcare
 pattern: [P07, P12]
 category: digital_product
-idea_type: platform
+idea_type: non_advertising
 involvement: participation
 channel: digital
 duration: ongoing
-goal: [social_change, awareness]
+goal: [purpose, awareness]
 budget: medium
 emotion: [hopeful, witnessed]
 emotion_tier: 2
-insight_domain: safety
+insight_domain: survival
 media_epoch: ai_era
 awards: [cannes_grand_prix]
 quality_score: 8

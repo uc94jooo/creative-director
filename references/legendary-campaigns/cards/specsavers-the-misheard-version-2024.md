@@ -9,10 +9,10 @@ region: europe
 industry: healthcare
 pattern: [P01, P06]
 category: integrated
-idea_type: stunt
+idea_type: non_advertising
 involvement: lean_forward
 channel: digital
-duration: one_shot
+duration: short_run
 goal: [awareness, engagement, trial]
 budget: low
 emotion: [ironic_sincerity, triumphant]

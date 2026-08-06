@@ -12,14 +12,14 @@ category: digital_product
 idea_type: execution
 involvement: lean_forward
 channel: digital
-duration: one_shot
+duration: short_run
 goal: [awareness, engagement]
 budget: medium
 emotion: [melancholic_joy, ironic_sincerity]
 emotion_tier: 3
 insight_domain: novelty
 media_epoch: data_first
-awards: [cannes_grand_prix]
+awards: [cannes_grand_prix, dnad_yellow_pencil]
 quality_score: 9
 scalability: universal
 risk: edgy

@@ -6,20 +6,20 @@ agency: Colenso BBDO
 year: 2024
 country: NZ
 region: apac
-industry: fmcg_food
+industry: cpg
 pattern: [P07, P12, P17]
 category: digital_product
-idea_type: platform
+idea_type: non_advertising
 involvement: lean_forward
 channel: digital
 duration: ongoing
-goal: [social_change, awareness, engagement]
+goal: [purpose, awareness, engagement]
 budget: medium
 emotion: [hopeful, protective]
 emotion_tier: 2
 insight_domain: identity
 media_epoch: ai_era
-awards: [cannes_grand_prix]
+awards: [cannes_grand_prix, dnad_yellow_pencil]
 quality_score: 9
 scalability: universal
 risk: safe

@@ -6,14 +6,14 @@ agency: Publicis Conseil
 year: 2024
 country: FR
 region: europe
-industry: auto
+industry: automotive
 pattern: [P07, P17]
 category: integrated
-idea_type: platform
+idea_type: non_advertising
 involvement: participation
-channel: multi
+channel: hybrid
 duration: ongoing
-goal: [social_change, awareness, loyalty]
+goal: [purpose, awareness, advocacy]
 budget: medium
 emotion: [hopeful, witnessed]
 emotion_tier: 2

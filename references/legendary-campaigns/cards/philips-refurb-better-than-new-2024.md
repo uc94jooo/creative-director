@@ -11,9 +11,9 @@ pattern: [P10, P17]
 category: integrated
 idea_type: campaign
 involvement: lean_forward
-channel: multi
-duration: one_shot
-goal: [awareness, social_change, sales]
+channel: hybrid
+duration: short_run
+goal: [awareness, purpose, sales]
 budget: medium
 emotion: [witnessed, hopeful]
 emotion_tier: 2
@@ -45,5 +45,5 @@ When your brand promise is durability or quality, the strongest proof is to stak
 ## Related
 - Pattern: [[../MOC-pattern.md#p10]]
 - Sibling: [[burger-king-moldy-whopper-2020.md|Moldy Whopper]]
-- Sibling: [[dramamine-last-barf-bag-2024.md|The Last Barf Bag]]
+- Sibling: [[dramamine-last-barf-bag-2023.md|The Last Barf Bag]]
 - Emotion match: [[renault-cars-to-work-2024.md|Cars to Work]]

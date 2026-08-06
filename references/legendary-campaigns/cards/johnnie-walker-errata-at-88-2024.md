@@ -5,15 +5,15 @@ brand: Johnnie Walker
 agency: VML Brazil
 year: 2024
 country: BR
-region: latin_america
+region: latam
 industry: beverage
 pattern: [P17, P06]
 category: integrated
 idea_type: campaign
 involvement: lean_forward
-channel: multi
+channel: hybrid
 duration: short_run
-goal: [awareness, social_change, engagement]
+goal: [awareness, purpose, engagement]
 budget: medium
 emotion: [dignified_grief, bittersweet_pride, defiant]
 emotion_tier: 3
