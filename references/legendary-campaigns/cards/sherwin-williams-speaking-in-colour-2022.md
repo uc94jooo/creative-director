@@ -18,7 +18,7 @@ budget: medium
 emotion: [recognized, longing]
 emotion_tier: 2
 insight_domain: identity
-media_epoch: owned
+media_epoch: ai_era
 awards: [cannes_grand_prix]
 quality_score: 8
 scalability: universal

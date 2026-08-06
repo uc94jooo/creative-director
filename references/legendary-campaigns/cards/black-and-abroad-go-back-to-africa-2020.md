@@ -17,7 +17,7 @@ budget: low
 emotion: [vulnerable_defiance, proud]
 emotion_tier: 3
 insight_domain: identity
-media_epoch: social
+media_epoch: ai_era
 awards: [cannes_grand_prix, multiple]
 quality_score: 9
 scalability: unique

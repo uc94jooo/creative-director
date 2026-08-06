@@ -18,7 +18,7 @@ budget: low
 emotion: [vulnerable_defiance]
 emotion_tier: 3
 insight_domain: fear
-media_epoch: viral_first
+media_epoch: ai_era
 awards: [cannes_grand_prix]
 quality_score: 9
 scalability: regional

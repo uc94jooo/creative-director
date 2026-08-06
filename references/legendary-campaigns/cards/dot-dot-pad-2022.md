@@ -18,7 +18,7 @@ budget: medium
 emotion: [triumphant, hopeful, recognized]
 emotion_tier: 2
 insight_domain: autonomy
-media_epoch: owned
+media_epoch: ai_era
 awards: [cannes_grand_prix]
 quality_score: 9
 scalability: universal

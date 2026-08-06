@@ -18,7 +18,7 @@ budget: medium
 emotion: [cathartic_release]
 emotion_tier: 3
 insight_domain: identity
-media_epoch: viral_first
+media_epoch: ai_era
 awards: [unknown]
 quality_score: 9
 scalability: universal

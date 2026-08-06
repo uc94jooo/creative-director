@@ -18,7 +18,7 @@ budget: high
 emotion: [nostalgic, bittersweet_pride]
 emotion_tier: 3
 insight_domain: community
-media_epoch: hybrid
+media_epoch: ai_era
 awards: [unknown]
 quality_score: 8
 scalability: unique

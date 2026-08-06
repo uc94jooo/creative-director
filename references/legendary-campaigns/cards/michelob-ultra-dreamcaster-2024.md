@@ -17,7 +17,7 @@ budget: high
 emotion: [bittersweet_pride, triumphant]
 emotion_tier: 3
 insight_domain: identity
-media_epoch: hybrid
+media_epoch: ai_era
 awards: [dnad_yellow_pencil, multiple]
 quality_score: 8
 scalability: regional

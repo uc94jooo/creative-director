@@ -17,7 +17,7 @@ budget: high
 emotion: [sublime_terror, ironic_sincerity]
 emotion_tier: 3
 insight_domain: identity
-media_epoch: hybrid
+media_epoch: ai_era
 awards: [cannes_gold, multiple]
 quality_score: 8
 scalability: unique

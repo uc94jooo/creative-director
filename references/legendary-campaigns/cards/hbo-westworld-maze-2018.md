@@ -18,7 +18,7 @@ budget: medium
 emotion: [longing, sublime_terror]
 emotion_tier: 3
 insight_domain: joy
-media_epoch: owned
+media_epoch: ai_era
 awards: [cannes_grand_prix, clio, multiple]
 quality_score: 9
 scalability: unique

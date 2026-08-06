@@ -18,7 +18,7 @@ budget: high
 emotion: [hopeful, recognized]
 emotion_tier: 2
 insight_domain: community
-media_epoch: social
+media_epoch: ai_era
 awards: [cannes_grand_prix]
 quality_score: 9
 scalability: regional

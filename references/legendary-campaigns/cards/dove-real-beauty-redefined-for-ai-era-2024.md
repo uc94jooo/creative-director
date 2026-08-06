@@ -18,7 +18,7 @@ budget: high
 emotion: [recognized, hopeful]
 emotion_tier: 2
 insight_domain: identity
-media_epoch: hybrid
+media_epoch: ai_era
 awards: [unknown]
 quality_score: 8
 scalability: universal

@@ -18,7 +18,7 @@ budget: medium
 emotion: [ironic_sincerity, surprised, ironic]
 emotion_tier: 3
 insight_domain: joy
-media_epoch: social
+media_epoch: ai_era
 awards: [cannes_grand_prix, one_show, multiple]
 quality_score: 10
 scalability: universal
