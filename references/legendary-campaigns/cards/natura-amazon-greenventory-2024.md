@@ -31,6 +31,17 @@ source_url: https://www.youtube.com/watch?v=0K3473QYVOM
 
 # The Amazon Greenventory (Natura · 2024)
 
+> ⚠️ **誠信查核提醒（2026-08-07 補註）**：本案代理商 Africa Creative DDB（聖保羅）2025 年在坎城獎
+> 承認灌水的是**同一家代理商為 Brahma 做的另一件作品**「Ads Cover Rents」（2025 嘉年華期間跟
+> Airbnb 房東合作、租金折扣換陽台掛廣告布條的游擊行銷，得了 Guerrilla Marketing & Stunts 類 Gold
+> Lion）——巴西媒體 UOL 查證後，代理商承認申案時宣稱「五個城市房租補貼約 50%」誇大了，實際
+> 在 Salvador 一地只補貼了平均房租的約 7.5%，Africa Creative 已發聲明承認誇大、並說明 Brahma
+> 本身未涉入誤植。該公司同期的 Budweiser 案例也因音樂授權問題受批評；坎城獎因此在 2025 年後
+> 全面加嚴 AI 揭露與誠信規範（詳見 DM9 撤獎事件）。**本卡 Amazon Greenventory 本身目前沒有被
+> 具體指控造假**，但同代理商當季有明確查證屬實的誇大案例，`confidence: low`／
+> `verification_required: true` 維持原判，被小D引用做比對基準前建議先自行查證關鍵數字
+> （如「6 個月完成 25 年工作量」「3 萬棵樹、44 個物種」）。
+
 ## Insight
 The economic argument for deforestation is easy to state in numbers; the argument for a standing forest usually isn't. The value of the Amazon's living resources — carbon stocks, biodiversity, ecological services — is invisible and unquantified, so in every local decision between cutting and keeping, only one side of the ledger has figures. Natura, the Brazilian beauty brand whose supply chain depends on the living Amazon, set out to make the standing forest legible as capital.
 

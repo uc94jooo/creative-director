@@ -199,6 +199,14 @@ See `references/emotion-hierarchy.md` for the authoritative 30+ values and tier 
 - `clio`
 - `effie`
 - `webby`
+- `spikes_asia_grand_prix`
+- `spikes_asia_gold`
+- `spikes_asia_silver`
+- `spikes_asia_bronze`
+- `shorty_grand_prix`
+- `shorty_gold`
+- `shorty_silver`
+- `shorty_bronze`
 - `multiple` — meta-tag for 5+ awards across shows
 - `none`
 - `unknown`
